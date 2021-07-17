@@ -54,7 +54,8 @@
     copy(this.articles.map((a) => a.article_title).join('\n'))
     return this
   }
-  const articles = document.querySelector("#app").children[0].__vue__.articleList
+  const $vm = document.querySelector("#app").children[0].__vue__
+  const articles = $vm.articleList || $vm.articles
   const result = {
     articles,
     withTime,
