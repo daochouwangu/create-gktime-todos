@@ -19,7 +19,9 @@
  result.onlyUnread过滤读完的文章
 #### 带上计划时间的todo
 result.withTime(peerDay) 生成带计划时间的todos（滴答清单支持）需要传入参数: 每天阅读几章，默认2
-
+#### 支持markdown
+result.withMarkdown() 生成markdown格式的todo
+![image](https://user-images.githubusercontent.com/4903149/126035069-4295ddfd-81ce-4980-9d7d-b61f2cb617d6.png)
 #### 使用例子
 result.onlyUnread().withTime(3) //过滤读过的，并带上计划时间
 <img src="https://user-images.githubusercontent.com/4903149/126034347-411c5e71-7697-4f90-bc28-0865b0ffac11.png" width="300px" />
