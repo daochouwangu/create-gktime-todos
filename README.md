@@ -11,8 +11,8 @@
     <img src="https://user-images.githubusercontent.com/4903149/126030415-9a753df2-4a21-4d35-960a-ded754e6c65c.png" width="400px" />
     <img src="https://user-images.githubusercontent.com/4903149/126034684-985e0047-ec56-4af8-9d07-0e7f2b866d47.png" width="400px" />
 3. 按F12/ cmd+option+i 呼出控制台
-4. 输入脚本 回车运行 createTasks().withLink().withMarkdown()
-5. 这个时候todos文本已经复制到你的剪贴板上了
+4. 输入脚本 回车运行 
+5. 这个时候todos文本已经复制到你的剪贴板上了(默认是 createTasks().withLink())
 ## 高级功能
 所有额外功能均支持链式调用
 #### 过滤
