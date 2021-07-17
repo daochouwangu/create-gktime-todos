@@ -1,4 +1,4 @@
-function createTasks() {
+(function createTasks() {
   // 过滤不重要的
   function onlyRequired() {
     this.articles = this.articles.filter((a) => a.is_required)
@@ -47,7 +47,6 @@ function createTasks() {
   function withLink() {
     if (this.isWithLink) return this
     this.isWithLink = true
-    const prefix = 'https://time.geekbang.org/column/article/';
     this.articles = this.articles.map(a => {
       a.article_title = `[${a.article_title}](${prefix+a.id})`
       return a
@@ -55,7 +54,7 @@ function createTasks() {
     return this.copyToClipBoard()
   }
   function copyToClipBoard() {
-    console.log("已经将所有文章标题复制到剪贴板， 可以直接粘贴到带批量生成todo的app中，比如滴答清单、微软todo")
+    console.log("已经复制到剪贴板")
     copy(this.articles.map((a) => a.prefix + a.article_title + a.suffix +'  ').join('\n'))
     return this
   }
@@ -85,6 +84,12 @@ function createTasks() {
 
   const $vm = document.querySelector("#app").children[0].__vue__
   let articles = $vm.articleList || $vm.articles
+  let prefix = 'https://time.geekbang.org/column/article/';
+  // 视频课
+  if (!articles || articles.length === 0 ) {
+    articles = $vm.videos;
+    prefix = 'https://time.geekbang.org/course/detail/'+$vm.columnId+'-';
+  }
   articles = articles.map(a => {
     let na = Object.assign({}, a)
     na.prefix = ''
@@ -100,16 +105,7 @@ function createTasks() {
     withMarkdown,
     withLink
   }
-  result.copyToClipBoard()
-  console.log("已经将所有文章标题复制到剪贴板， 可以直接粘贴到带批量生成todo的app中，比如滴答清单、微软todo")
-  console.log(`接下来使用进行过滤和增加时间限制的高级功能
-    result.onlyRequired 来过滤非重要的，比如答疑结尾语
-    result.onlyUnread来过滤已经读过的
-    result.withTime 生成带时间限制的todo,要传入一个每天读几章的参数，默认2
-    result.withMarkdown 生成支持markdown todo的文本
-    result.withLink  生成带链接的todo
-    支持链式调用，比如
-    result.onlyUnread().withTime()`
-  )
+  result.withLink()
+  window.createTasks = createTasks
   return result
-}
+})()
