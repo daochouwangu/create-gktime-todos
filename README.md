@@ -25,5 +25,5 @@ createTasks().withMarkdown() 生成markdown格式的todo
 #### 支持加入链接
 createTasks().withLink() 生成带链接的todo
 #### 使用例子
-createTasks().withLink().withMarkdown() 带链接的markdown语法
+createTasks().withLink().withMarkdown() 带链接的markdown语法  
 createTasks().onlyUnread().withLink().withTime() 未读完的带链接和计划时间的
