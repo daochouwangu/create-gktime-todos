@@ -12,7 +12,7 @@
     newObj.articles = this.articles.map(a => {
       const na = Object.assign({}, a)
       if (!na.is_finished) {
-        na.article_title += '\t' + timeTextGen.next().value
+        na.article_title = na.article_title.replace('|', '｜') + '\t' + timeTextGen.next().value
       }
       return na;
     })
