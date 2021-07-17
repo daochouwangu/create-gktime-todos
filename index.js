@@ -36,11 +36,9 @@ function createTasks() {
     const count = this.articles.filter(a => !a.is_finished).length
     const timeTextGen = getTimeTextGen(peerDay, count)();
     this.articles = this.articles.map(a => {
+      a.article_title = a.article_title.replace('|', '｜')
       if (!a.is_finished) {
-        a.article_title = a.article_title.replace('|', '｜')
         a.suffix = '\t'+timeTextGen.next().value
-      } else {
-        a.suffix = ''
       }
       return a;
     })
