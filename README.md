@@ -7,8 +7,9 @@
 
 1. 拷贝脚本
 2. 打开极客时间课程详情页或者阅读界面
-    <img src="https://user-images.githubusercontent.com/4903149/126030415-9a753df2-4a21-4d35-960a-ded754e6c65c.png" width="300px" />
-    <img src="https://user-images.githubusercontent.com/4903149/126034684-985e0047-ec56-4af8-9d07-0e7f2b866d47.png" width="300px" />
+
+    <img src="https://user-images.githubusercontent.com/4903149/126030415-9a753df2-4a21-4d35-960a-ded754e6c65c.png" width="400px" />
+    <img src="https://user-images.githubusercontent.com/4903149/126034684-985e0047-ec56-4af8-9d07-0e7f2b866d47.png" width="400px" />
 3. 按F12/ cmd+option+i 呼出控制台
 4. 输入脚本 回车运行
 5. 这个时候一般的todos文本已经复制到你的剪贴板上了，使用有批量导入（滴答清单/微软todo）的app批量生成todos
